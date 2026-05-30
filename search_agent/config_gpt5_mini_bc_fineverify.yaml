@@ -1,0 +1,67 @@
+# Config for:
+#   python fineverify/BrowseComp-Plus/search_agent/gpt5_mini_bc_fineverify.py
+#
+# Uses OPENAI_API_KEY from the environment unless api_key is set below.
+# Data/decomposition paths resolve against the FineVerify root.
+# index_path resolves against the BrowseComp-Plus root when it is relative.
+
+data: "data/Browsecomp_plus.jsonl"
+decomposed_jsonl: "data/decomposed/gpt_5_mini_browsecomp_decomposed.jsonl"
+output_dir: "run/gpt5-mini-bc-fineverify/browsecomp-plus"
+
+max_rounds: 4
+start: 0
+end: 1
+limit: null
+num_threads: 1
+force: false
+
+search_model: "gpt-5-mini"
+judge_model: "gpt-5-mini"
+verification_model: "gpt-5.4-mini"
+
+search_reasoning_effort: "medium"
+judge_reasoning_effort: "medium"
+verification_reasoning_effort: "medium"
+
+query_template: "QUERY_TEMPLATE_NO_GET_DOCUMENT"
+search_max_output_tokens: 40000
+judge_max_output_tokens: 20000
+verification_max_output_tokens: 40000
+
+judge_max_attempts: 4
+verification_max_retries: 4
+count_tolerance: 1
+search_max_iterations: 100
+verification_max_iterations: 100
+
+score_supported: 1.0
+score_not_found: 0.0
+score_contradicted: 0.0
+early_stop_score: 1.0
+normalize_not_attempted_to_null: true
+
+temperature: null
+top_p: null
+search_system: null
+verification_system: null
+
+searcher_type: "faiss"
+index_path: "indexes/qwen3-embedding-8b/corpus.shard*.pkl"
+model_name: "Qwen/Qwen3-Embedding-8B"
+normalize: true
+pooling: "eos"
+torch_dtype: "float16"
+dataset_name: "Tevatron/browsecomp-plus-corpus"
+task_prefix: "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:"
+max_length: 8192
+
+search_snippet_max_tokens: 512
+verification_snippet_max_tokens: 512
+search_k: 5
+verification_k: 5
+search_get_document: false
+verification_get_document: true
+hf_token: null
+hf_home: null
+api_key: null

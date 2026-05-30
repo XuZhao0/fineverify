@@ -1,0 +1,54 @@
+# Config for:
+#   python fineverify/BrowseComp-Plus/search_agent/gemini_bc_fineverify.py
+#
+# Uses GEMINI_API_KEY or GOOGLE_API_KEY for Gemini calls.
+# Uses OPENAI_API_KEY for the default OpenAI judge.
+# Data/decomposition paths resolve against the FineVerify root.
+
+data: "data/Browsecomp_plus.jsonl"
+decomposed_jsonl: "data/decomposed/gemini_3_flash_browsecomp_decomposed.jsonl"
+output_dir: "run/gemini-bc-fineverify/browsecomp-plus"
+
+max_rounds: 4
+start: 0
+end: 1
+limit: null
+num_threads: 1
+force: false
+
+search_model: "gemini-3-flash-preview"
+verification_model: "gemini-3-flash-preview"
+judge_provider: "openai"
+judge_model: "gpt-5.4-mini"
+
+search_thinking_level: "medium"
+judge_thinking_level: "medium"
+verification_thinking_level: "medium"
+
+query_template: "QUERY_TEMPLATE_NO_GET_DOCUMENT"
+search_max_output_tokens: 40000
+judge_max_output_tokens: 20000
+verification_max_output_tokens: 40000
+
+search_request_max_attempts: 7
+judge_max_attempts: 4
+verification_max_retries: 4
+verification_request_max_attempts: 5
+search_max_iterations: 100
+verification_max_iterations: 100
+count_tolerance: 1
+
+score_supported: 1.0
+score_not_found: 0.0
+score_contradicted: 0.0
+early_stop_score: 1.0
+normalize_not_attempted_to_null: true
+
+search_system: null
+verification_system: null
+
+search_mcp_url: "http://127.0.0.1:8080/mcp"
+verification_mcp_url: "http://127.0.0.1:8081/mcp"
+
+api_key: null
+openai_api_key: null

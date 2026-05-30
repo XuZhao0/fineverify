@@ -1,0 +1,7 @@
+google-genai==1.69.0
+openai==2.32.0
+pydantic==2.12.5
+python-dotenv==1.2.1
+PyYAML==6.0.2
+rich==13.9.4
+tqdm==4.67.1

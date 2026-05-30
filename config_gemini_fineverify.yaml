@@ -1,0 +1,47 @@
+# Config for:
+#   python -m fineverify.gemini_fineverify --config fineverify/config_gemini_fineverify.yaml
+#
+# Uses GEMINI_API_KEY or GOOGLE_API_KEY from the environment.
+
+data: "data/DeepsearchQA.jsonl"
+decomposed_jsonl: "data/decomposed/gemini_3_flash_DSQA_decomposed.jsonl"
+output_dir: "run/gemini-fineverify/dsqa"
+
+max_rounds: 4
+start: 0
+end: 1
+limit: null
+num_threads: 1
+force: false
+
+search_model: "gemini-3-flash-preview"
+verification_model: "gemini-3-flash-preview"
+judge_provider: "openai"
+judge_model: "gpt-5.4-mini"
+
+search_reasoning_effort: "medium"
+judge_reasoning_effort: "medium"
+verification_reasoning_effort: "medium"
+
+query_template: "QUERY_TEMPLATE_WEB"
+search_system_prompt: null
+verification_system_prompt: null
+
+search_max_output_tokens: 40000
+judge_max_output_tokens: 20000
+verification_max_output_tokens: 40000
+
+search_max_attempts: 7
+judge_max_attempts: 4
+verification_max_retries: 4
+verification_request_max_attempts: 5
+count_tolerance: 1
+
+score_supported: 1.0
+score_not_found: 0.0
+score_contradicted: 0.0
+early_stop_score: 1.0
+normalize_not_attempted_to_null: true
+
+api_key: null
+openai_api_key: null
