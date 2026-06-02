@@ -1,6 +1,6 @@
 # FineVerify
 
-Code and data for the paper "FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search".
+Code and data for the paper ["FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search"](https://arxiv.org/pdf/2606.00660).
 
 ## 📁 Contents
 
@@ -52,7 +52,7 @@ GEMINI_API_KEY=your_gemini_key
 ```
 
 ### BrowseComp-Plus Setup
-BrowseComp-Plus requires FAISS retrieval. Follow the setup instructions in `BrowseComp-Plus/README.md` to configure the FAISS searcher and download the local index files. Then activate the environment and install the remaining dependencies, for example:
+BrowseComp-Plus requires FAISS retrieval. Follow the setup instructions in [`BrowseComp-Plus/README.md`](BrowseComp-Plus/README.md) to configure the FAISS searcher and download the local index files. Then activate the environment and install the remaining dependencies, for example:
 
 ```bash
 source BrowseComp-Plus/.venv/bin/activate
@@ -102,7 +102,7 @@ Use `config_gpt5_mini_fineverify.yaml` for GPT-5-mini and `config_gemini_finever
 
 ## FineVerify on BrowseComp-Plus
 
-First, follow the `BrowseComp-Plus/README.md` setup instructions to configure the FAISS searcher and download the local index files. Then run the FineVerify drivers with custom search tools that interface with the local searcher and indices.
+First, follow the [`BrowseComp-Plus/README.md`](BrowseComp-Plus/README.md) setup instructions to configure the FAISS searcher and download the local index files. Then run the FineVerify drivers with custom search tools that interface with the local searcher and indices.
 
 Copy or move files under `fineverify/search_agent/` to the corresponding directory under `BrowseComp-Plus/search_agent` to keep dependencies aligned. You can also move `data/` folder under `BrowseComp-Plus/`.
 
@@ -119,7 +119,7 @@ python BrowseComp-Plus/search_agent/gpt5_mini_bc_fineverify.py \
 
 ### 2. Gemini with MCP Tools on BrowseComp-Plus
 
-Following `BrowseComp-Plus/docs/gemini.md`, set up the MCP servers with Qwen3-Embedding search tools. FineVerify uses two MCP servers: one for candidate-answer search and one for verification.
+Following [`BrowseComp-Plus/docs/gemini.md`](BrowseComp-Plus/docs/gemini.md), set up the MCP servers with Qwen3-Embedding search tools. FineVerify uses two MCP servers: one for candidate-answer search and one for verification.
 
 - `search_mcp_url`: candidate-answer search tool, default `http://127.0.0.1:8080/mcp`
 - `verification_mcp_url`: verification search and get_doc tools, default `http://127.0.0.1:8081/mcp`
