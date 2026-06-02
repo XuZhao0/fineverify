@@ -159,12 +159,27 @@ Use `--help` on any script for the full argument list.
 
 ## 📝 Notes
 
+- We do not tune prompts for specific benchmarks or models. Feel free to adjust the prompt templates in `prompts.py` for potential improvements.
 - Paths in the YAML configs are usually relative to `fineverify/` and are
   resolved by the drivers.
 - The BrowseComp-Plus GPT driver does not require MCP, but it does require the
   configured searcher dependencies and local index files.
-- The BrowseComp-Plus Gemini driver requires running MCP servers before starting
-  the FineVerify job.
+- The BrowseComp-Plus Gemini driver requires running MCP servers before starting the FineVerify job.
+
+## Citation
+
+If you find our code or data useful, please cite:
+```bibtex
+@misc{zhao2026fineverifyscalingtesttimecompute,
+      title={FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search}, 
+      author={James Xu Zhao and Hui Chen and Bryan Hooi and See-Kiong Ng},
+      year={2026},
+      eprint={2606.00660},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2606.00660}, 
+}
+```
 
 ## Contact
 For questions or suggestions, feel free to contact: `xu.zhao@u.nus.edu`
