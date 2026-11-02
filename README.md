@@ -1,6 +1,6 @@
 # FineVerify
 
-Code and data for the paper ["FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search"](https://arxiv.org/pdf/2606.00660).
+Code and data for the paper [&#34;FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search&#34;](https://aclanthology.org/2026.emnlp-main.2599.pdf) (EMNLP 2026 Main)
 
 ## 📁 Contents
 
@@ -52,6 +52,7 @@ GEMINI_API_KEY=your_gemini_key
 ```
 
 ### BrowseComp-Plus Setup
+
 BrowseComp-Plus requires FAISS retrieval. Follow the setup instructions in [`BrowseComp-Plus/README.md`](BrowseComp-Plus/README.md) to configure the FAISS searcher and download the local index files. Then activate the environment and install the remaining dependencies, for example:
 
 ```bash
@@ -169,17 +170,31 @@ Use `--help` on any script for the full argument list.
 ## Citation
 
 If you find our code or data useful, please cite:
+
 ```bibtex
-@misc{zhao2026fineverifyscalingtesttimecompute,
-      title={FineVerify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search}, 
-      author={James Xu Zhao and Hui Chen and Bryan Hooi and See-Kiong Ng},
-      year={2026},
-      eprint={2606.00660},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2606.00660}, 
+@inproceedings{zhao-etal-2026-fineverify,
+    title = "{F}ine{V}erify: Scaling Test-Time Compute with Fine-Grained Self-Verification for Agentic Search",
+    author = "Zhao, James Xu  and
+      Chen, Hui  and
+      Hooi, Bryan  and
+      Ng, See-Kiong",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.2599/",
+    doi = "10.18653/2026.emnlp-main.2599",
+    pages = "59033--59062",
+    ISBN = "979-8-89176-459-0",
+    abstract = "Agentic search requires language model agents to explore many sources and answer complex information-seeking questions. Scaling test-time compute is a promising way to improve these agents, but current approaches can fail, because correct answers are often sparse and score-based selection depends on model calibration. We propose FineVerify, a fine-grained self-verification framework that decomposes each question into checkable sub-questions, verifies sampled candidates against each sub-question, and selects the candidate with the highest aggregated score. This per-check structure turns selection into simpler local judgments and produces scores under the same explicit criteria. Across four agentic search benchmarks and two models, FineVerify consistently outperforms standard scaling baselines. With only four sampled trajectories, it improves GPT-5-mini by 8.2 accuracy points and Gemini-3-flash by 5.6{\%} on average. With 12 samples, FineVerify enables GPT-5-mini to surpass frontier GPT-5 on BrowseComp-Plus. Beyond accuracy, FineVerify produces interpretable verification traces that help audit benchmark errors, suggesting broader applications for inspecting agentic search systems."
 }
 ```
 
 ## Contact
+
 For questions or suggestions, feel free to contact: `xu.zhao@u.nus.edu`
